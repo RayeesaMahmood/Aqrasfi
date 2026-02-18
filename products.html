@@ -250,3 +250,682 @@ body {
 }
 </style>
 </head>
+
+<body>
+
+<nav class="navbar">
+
+    <!-- Left Side -->
+    <div class="nav-left">
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+            <a href="#" id="productsBtn">Products <i class="fa fa-caret-down"></i></a>
+            </div>
+        </div>
+
+        <a href="products.html">Discover</a>
+        <a href="index.html">Shop Now</a>
+    </div>
+
+    <!-- Center Logo -->
+    <div class="nav-center">
+    <i class="fa-regular fa-gem"></i> AQRASFI
+</div>
+
+    <!-- Right Side -->
+    <div class="nav-right">
+        <i class="fa fa-search"></i>
+        <i class="fa fa-shopping-cart"></i>
+        <a href="https://www.instagram.com" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+</nav>
+
+<script>
+// Toggle Dropdown on Click
+const productsBtn = document.getElementById("productsBtn");
+const dropdown = document.querySelector(".dropdown");
+
+productsBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    dropdown.classList.toggle("active");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function(e) {
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("active");
+    }
+});
+</script>
+<!-- Product Showcase Section -->
+<main class="products-container">
+    <!-- Earrings Section -->
+    <section class="product-section">
+        <h2 class="section-title">Earrings</h2>
+        <div class="slider-wrapper">
+            <button class="slider-btn slider-btn-prev" aria-label="Previous">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <div class="products-slider">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSov5VJ_3L08kOiHw-AnyFBBcNEm9t5v938ipYne2rxSA&s" alt="Black star leaf Earrings">
+                    </div>
+                    <h3 class="product-name">Diamond Studs</h3>
+                    <p class="product-price">150INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.viariaccessories.com/cdn/shop/files/EARAUG14-2.webp?v=1734703473" alt="White star Earrings">
+                    </div>
+                    <h3 class="product-name">Pearl Drops</h3>
+                    <p class="product-price">150INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSov5VJ_3L08kOiHw-AnyFBBcNEm9t5v938ipYne2rxSA&s" alt="black Earrings">
+                    </div>
+                    <h3 class="product-name">Gold Hoops</h3>
+                    <p class="product-price">150 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/x1L0NmMW/4.png" alt="Jade Earrings">
+                    </div>
+                    <h3 class="product-name">12pc Earring</h3>
+                    <p class="product-price">549 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/xqrw9sxT/5.png" alt="Rose Gold Earrings">
+                    </div>
+                    <h3 class="product-name">Earrings Combo Set</h3>
+                    <p class="product-price">549 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <button class="slider-btn slider-btn-next" aria-label="Next">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Necklaces Section -->
+    <section class="product-section">
+        <h2 class="section-title">Necklaces</h2>
+        <div class="slider-wrapper">
+            <button class="slider-btn slider-btn-prev" aria-label="Previous">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <div class="products-slider">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/RhTYzMHb/1.png" alt="Gold Necklace">
+                    </div>
+                    <h3 class="product-name">Golden Chain</h3>
+                    <p class="product-price">399 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/J73vXQ2Q/2.png" alt="Pendant Necklace">
+                    </div>
+                    <h3 class="product-name">Diamond Pendant</h3>
+                    <p class="product-price">399 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/ZYP2NLM8/3.png" alt="Silver Necklace">
+                    </div>
+                    <h3 class="product-name">Silver Elegance</h3>
+                    <p class="product-price">399 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/3rLjz4yZ/Gemini-Generated-Image-6tr23w6tr23w6tr2.png" alt="Pearl Necklace">
+                    </div>
+                    <h3 class="product-name">Pearl Perfection</h3>
+                    <p class="product-price">549 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/RFgfry0p/Gemini-Generated-Image-7gy3zx7gy3zx7gy3.png" alt="Gemstone Necklace">
+                    </div>
+                    <h3 class="product-name">Gemstone Radiance</h3>
+                    <p class="product-price">549 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/hj2xF6G0/Gemini-Generated-Image-7tvz1b7tvz1b7tvz.png" alt="Crystal Necklace">
+                    </div>
+                    <h3 class="product-name">Crystal Charm</h3>
+                    <p class="product-price">549 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/tTBP0wgS/Gemini-Generated-Image-9ibwwl9ibwwl9ibw.png" alt="Luxury Necklace">
+                    </div>
+                    <h3 class="product-name">Luxury Divine</h3>
+                    <p class="product-price">549 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://i.postimg.cc/XY6rP4gL/Gemini-Generated-Image-g9dcvpg9dcvpg9dc.png" alt="Elegant Necklace">
+                                    </div>
+                                    <h3 class="product-name">Elegant Charm</h3>
+                                    <p class="product-price">549 INR</p>
+                                    <button class="add-to-cart-btn">Add to Cart</button>
+                                </div>
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://i.postimg.cc/ht8XW6yh/Gemini-Generated-Image-v8cdanv8cdanv8cd.png" alt="Serene Necklace">
+                                    </div>
+                                    <h3 class="product-name">Serene Beauty</h3>
+                                    <p class="product-price">549 INR</p>
+                                    <button class="add-to-cart-btn">Add to Cart</button>
+                                </div>
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://i.postimg.cc/zGwyZ6tb/Gemini-Generated-Image-wxvjf5wxvjf5wxvj.png" alt="Mystique Necklace">
+                                    </div>
+                                    <h3 class="product-name">Mystique Grace</h3>
+                                    <p class="product-price">549 INR </p>
+                                    <button class="add-to-cart-btn">Add to Cart</button>
+                                </div>
+
+            </div>
+            <button class="slider-btn slider-btn-next" aria-label="Next">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Rings & Bracelets Section -->
+    <section class="product-section">
+        <h2 class="section-title">Rings & Bracelets</h2>
+        <div class="slider-wrapper">
+            <button class="slider-btn slider-btn-prev" aria-label="Previous">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <div class="products-slider">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/RVyh2fc1/Whats-App-Image-2026-02-15-at-7-47-50-PM.jpg" alt="Ring 1">
+                    </div>
+                    <h3 class="product-name">Black solatire set combo</h3>
+                    <p class="product-price">899 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/65gqFRdY/Whats-App-Image-2026-02-15-at-7-47-51-PM.jpg" alt="Ring 2">
+                    </div>
+                    <h3 class="product-name">White Solatire set combo</h3>
+                    <p class="product-price">899 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/m2JkKMQV/Whats-App-Image-2026-02-15-at-7-47-51-PM-(1).jpg" alt="Ring 3">
+                    </div>
+                    <h3 class="product-name">golden combo</h3>
+                    <p class="product-price">899 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/T2QWNp7B/Whats-App-Image-2026-02-15-at-7-45-44-PM.jpg" alt="Bracelet 1">
+                    </div>
+                    <h3 class="product-name">Gold Watch Quatrz</h3>
+                    <p class="product-price">1499 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/QNSWYHYr/Whats-App-Image-2026-02-15-at-7-45-46-PM.jpg" alt="Bracelet 2">
+                    </div>
+                    <h3 class="product-name">Cartier Double Bracelet</h3>
+                    <p class="product-price">1200 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/Y28mDhDK/Whats-App-Image-2026-02-15-at-7-45-59-PM.jpg" alt="Bracelet 3">
+                    </div>
+                    <h3 class="product-name">single Cartier Bracelet</h3>
+                    <p class="product-price">599 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/wxFs474H/Whats-App-Image-2026-02-15-at-7-46-07-PM.jpg" alt="Bracelet 4">
+                    </div>
+                    <h3 class="product-name">Pearl Luxury</h3>
+                    <p class="product-price"> 1200 INR</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.postimg.cc/3r9DfdfK/Whats-App-Image-2026-02-15-at-7-46-08-PM.jpg" alt="Bracelet 5">
+                    </div>
+                    <h3 class="product-name">Jade Harmony</h3>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <button class="slider-btn slider-btn-next" aria-label="Next">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+<!-- Cart Modal -->
+<div id="cartModal" style="position: fixed; top: 0; right: -400px; width: 350px; height: 100%; background: white; box-shadow: -5px 0 20px rgba(0,0,0,0.2); transition: right 0.4s ease; z-index: 9999; padding: 20px; overflow-y: auto;">
+    <h2 style="margin-top:0;">Your Cart</h2>
+    <div id="cartItems"></div>
+    <h3 id="cartTotal">Total: 0 INR</h3>
+    <button id="confirmOrder" style="width:100%; padding:10px; background:#c59d5f; border:none; color:white; font-weight:bold; cursor:pointer;">Confirm Order</button>
+</div>
+
+<!-- Overlay -->
+<div id="cartOverlay" style="position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); display:none; z-index:9998;"></div>
+
+</main>
+
+<style>
+    /* Products Container */
+    .products-container {
+        padding: 60px 40px;
+        background-color: #fafafa;
+    }
+
+    /* Section Title */
+    .section-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #333;
+        text-align: center;
+    }
+
+    /* Slider Wrapper */
+    .slider-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 50px;
+        padding: 0 60px;
+    }
+
+    /* Products Slider */
+    .products-slider {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        flex: 1;
+        scrollbar-width: none;
+        padding: 10px 0;
+    }
+
+    .products-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Product Card */
+    .product-card {
+        flex: 0 0 auto;
+        width: 250px;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+    }
+     /*pruct slider */
+     .products-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex: 1;
+    scrollbar-width: none;
+    padding: 10px 0;
+
+    flex-wrap: nowrap; /* ADD THIS */
+    }
+
+    /* Product Image */
+    .product-image {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        background-color: #f5f5f5;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image img {
+        transform: scale(1.05);
+    }
+
+    /* Product Name */
+    .product-name {
+        padding: 16px 16px 8px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+    }
+
+    /* Product Price */
+    .product-price {
+        padding: 0 16px 12px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #c59d5f;
+        margin: 0;
+    }
+
+    /* Add to Cart Button */
+    .add-to-cart-btn {
+        width: calc(100% - 32px);
+        margin: 0 16px 16px;
+        padding: 10px;
+        background-color: #c59d5f;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart-btn:hover {
+        background-color: #a87d47;
+    }
+
+    /* Slider Buttons */
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        z-index: 10;
+        opacity: 0;
+    }
+
+    .slider-btn:hover {
+        background-color: #c59d5f;
+        color: white;
+        border-color: #c59d5f;
+    }
+
+    .slider-wrapper:hover .slider-btn {
+        opacity: 1;
+    }
+
+    .slider-btn-prev {
+        left: 0;
+    }
+
+    .slider-btn-next {
+        right: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .products-container {
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .slider-wrapper {
+            gap: 10px;
+            padding: 0 50px;
+        }
+
+        .product-card {
+            flex: 0 0 200px;
+        }
+
+        .product-image {
+            height: 200px;
+        }
+
+        .slider-btn-prev {
+            left: 0;
+        }
+
+        .slider-btn-next {
+            right: 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .slider-btn {
+            display: none;
+        }
+
+        .product-card {
+            flex: 0 0 160px;
+        }
+
+        .products-slider {
+            gap: 12px;
+        }
+    }
+</style>
+
+<script>
+    // Initialize sliders
+    function initializeSliders() {
+        const sliderWrappers = document.querySelectorAll('.slider-wrapper');
+        
+        sliderWrappers.forEach(wrapper => {
+            const prevBtn = wrapper.querySelector('.slider-btn-prev');
+            const nextBtn = wrapper.querySelector('.slider-btn-next');
+            const slider = wrapper.querySelector('.products-slider');
+            
+            const cardWidth = 250 + 20; // card width + gap
+            
+            prevBtn.addEventListener('click', () => {
+                slider.scrollBy({
+                    left: -cardWidth,
+                    behavior: 'smooth'
+                });
+            });
+            
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({
+                left: cardWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        // Touch/swipe support
+        let startX = 0;
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextBtn.click();
+                } else {
+                    prevBtn.click();
+                }
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeSliders);
+</script>
+<script>
+function initializeSliders() {
+    const sliderWrappers = document.querySelectorAll('.slider-wrapper');
+    
+    sliderWrappers.forEach(wrapper => {
+        const prevBtn = wrapper.querySelector('.slider-btn-prev');
+        const nextBtn = wrapper.querySelector('.slider-btn-next');
+        const slider = wrapper.querySelector('.products-slider');
+        const cardWidth = 270;
+
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeSliders();
+
+    const cart = [];
+    const cartIcon = document.querySelector('.fa-shopping-cart');
+    const cartModal = document.getElementById('cartModal');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartItemsContainer = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const confirmBtn = document.getElementById('confirmOrder');
+
+    // Add to Cart
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.product-card');
+            const name = card.querySelector('.product-name').innerText;
+            const priceText = card.querySelector('.product-price')?.innerText || "0";
+            const price = parseInt(priceText.replace(/\D/g, ''));
+
+            cart.push({ name, price });
+            updateCart();
+            openCart();
+        });
+    });
+
+    function updateCart() {
+        cartItemsContainer.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            total += item.price;
+
+            cartItemsContainer.innerHTML += `
+                <div style="margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;">
+                    <p style="margin:0;">${item.name}</p>
+                    <p style="margin:5px 0;">${item.price} INR</p>
+                    <button onclick="removeItem(${index})" style="background:red;color:white;border:none;padding:5px 8px;cursor:pointer;">Remove</button>
+                </div>
+            `;
+        });
+
+        cartTotal.innerText = "Total: " + total + " INR";
+    }
+
+    window.removeItem = function(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    function openCart() {
+        cartModal.style.right = "0";
+        cartOverlay.style.display = "block";
+    }
+
+    function closeCart() {
+        cartModal.style.right = "-400px";
+        cartOverlay.style.display = "none";
+    }
+
+    cartIcon.addEventListener('click', openCart);
+    cartOverlay.addEventListener('click', closeCart);
+
+    // Confirm Order → Redirect to Instagram
+    confirmBtn.addEventListener('click', () => {
+        if(cart.length === 0){
+            alert("Your cart is empty!");
+            return;
+        }
+
+        let message = "Hello AQRASFI! I want to order:%0A%0A";
+        let total = 0;
+
+        cart.forEach(item => {
+            message += "- " + item.name + " (" + item.price + " INR)%0A";
+            total += item.price;
+        });
+
+        message += "%0ATotal: " + total + " INR";
+
+        const instagramURL = "https://www.instagram.com/aqrasfi";
+        window.open(instagramURL, "_blank");
+    });
+});
+</script>
+
+<footer style="background-color: #333; color: #fff; padding: 40px; text-align: center; margin-top: 60px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h3 style="margin-bottom: 20px; font-size: 20px;">AQRASFI</h3>
+        <p style="margin: 10px 0; font-size: 14px;">Premium Jewelry Collection</p>
+        
+        <div style="margin: 30px 0; display: flex; justify-content: center; gap: 20px;">
+            <a href="https://www.instagram.com/aqrasfi" target="_blank" style="color: #c59d5f; text-decoration: none; font-size: 28px; transition: transform 0.3s ease;">
+            <i class="fab fa-instagram" style="transition: all 0.3s ease;" onmouseover="this.style.color='#e1306c'; this.style.transform='scale(1.2)'" onmouseout="this.style.color='#c59d5f'; this.style.transform='scale(1)'"></i>
+            </a>
+        </div>
+        
+        <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #555; font-size: 12px; color: #aaa;">
+            &copy; 2024 AQRASFI. All rights reserved.
+        </p>
+    </div>
+
+</footer>
+<body>
+</html>
