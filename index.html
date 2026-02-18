@@ -120,8 +120,8 @@ body {
 }
 
 .book-wrapper {
-    width: 85%;              /* wider to show 2 slides */
-    max-width: 1000px;       /* increased max-width */
+    width: 85%;
+    max-width: 1000px;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
@@ -133,7 +133,7 @@ body {
 }
 
 .book-slide {
-    min-width: 50%;          /* shows 2 slides at a time */
+    min-width: 50%;
     height: 320px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -207,6 +207,126 @@ footer {
     padding: 30px;
     font-size: 14px;
 }
+
+/* ================================================= */
+/* ================= RESPONSIVE ===================== */
+/* ================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 18px 30px;
+    }
+
+    .products-section {
+        padding: 60px 30px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .book-wrapper {
+        width: 95%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-left,
+    .nav-right {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .nav-center {
+        font-size: 22px;
+    }
+
+    .hero {
+        height: 75vh;
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .book-slide {
+        min-width: 100%;
+        height: 260px;
+    }
+
+    .products-section {
+        padding: 60px 20px;
+    }
+
+    .products-section h2 {
+        font-size: 28px;
+    }
+
+    .products-grid {
+        gap: 25px;
+    }
+
+    .product-card img {
+        height: 200px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .nav-left a,
+    .nav-right i {
+        font-size: 12px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+
+    .btn-cart {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 20px;
+    }
+}
 </style>
 </head>
 
@@ -234,7 +354,7 @@ footer {
     <div class="hero-content">
         <h1>Timeless Elegance</h1>
         <p>Luxury Jewelry Crafted with Passion</p>
-        <button>Shop Now</button></a>
+        <button>Shop Now</button>
     </div>
 </section>
 
@@ -296,15 +416,13 @@ const slides = document.querySelectorAll(".book-slide");
 let index = 0;
 
 function autoSlide() {
-    index += 2;  // move by 2 slides to show next pair
+    index += 2;
     if (index >= slides.length) {
         index = 0;
     }
-
     slider.style.transform = `translateX(-${index * 50}%)`;
 }
 
-// Change slide every 3 seconds
 setInterval(autoSlide, 3000);
 </script>
 
