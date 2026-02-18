@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AQRASFI | Luxury Jewelry</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #fafafa;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-center {
+    font-family: "Playfair Display", serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.nav-left a, .nav-right i {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-left a:hover,
+.nav-right i:hover {
+    color: #c59d5f;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 90vh;
+    background: url(" https://images.unsplash.com/photo-1601821765780-754fa98637c1 ") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 60px;
+    margin: 0;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.hero button {
+    padding: 12px 30px;
+    border: none;
+    background: #c59d5f;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #b8885a;
+}
+
+/* ================= SLIDER ================= */
+
+.book-section {
+    padding: 60px 0;
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+}
+
+.book-wrapper {
+    width: 85%;              /* wider to show 2 slides */
+    max-width: 1000px;       /* increased max-width */
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.book-slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.book-slide {
+    min-width: 50%;          /* shows 2 slides at a time */
+    height: 320px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products-section {
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.products-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.4s;
+}
+
+.product-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(197,157,95,0.25);
+}
+
+.product-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin: 20px 0 10px;
+}
+
+.product-card p {
+    font-size: 13px;
+    color: #777;
+    padding: 0 20px;
+}
+
+.btn-cart {
+    margin: 20px;
+    padding: 10px 20px;
+    background: #c59d5f;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="#">Home</a>
+        <a href="products.html">Products</a>
+        <a href="#">Discover</a>
+    </div>
+
+    <div class="nav-center">AQRASFI</div>
+
+    <div class="nav-right">
+        <i class="fa fa-search"></i>
+        <i class="fa fa-shopping-cart"></i>
+        <i class="fab fa-instagram"></i>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Timeless Elegance</h1>
+        <p>Luxury Jewelry Crafted with Passion</p>
+        <button>Shop Now</button></a>
+    </div>
+</section>
+
+<!-- BOOK SLIDER -->
+<section class="book-section">
+    <div class="book-wrapper">
+        <div class="book-slider">
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/Y2Yn6VcF/Aqrasfi-Jewelry-(1)-page-0002.jpg')"></div>
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/3NnD53s4/Aqrasfi-Jewelry-(1)-page-0003.jpg')"></div>
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/fbmtW74Q/Aqrasfi-Jewelry-(1)-page-0007.jpg')"></div>
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/MTwcncxB/Aqrasfi-Jewelry-(1)-page-0008.jpg')"></div>
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/hjnJXJg9/Aqrasfi-Jewelry-(1)-page-0009.jpg')"></div>
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/zBNLyL5T/Aqrasfi-Jewelry-(1)-page-0010.jpg')"></div>
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/0Qv6z6xY/Aqrasfi-Jewelry-(1)-page-0011.jpg')"></div>
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/qRrtNt0x/Aqrasfi-Jewelry-(1)-page-0012.jpg')"></div>
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/sXzBMByT/Aqrasfi-Jewelry-(1)-page-0013.jpg')"></div>
+            <div class="book-slide" style="background-image: url('https://i.postimg.cc/bJPGZG8V/Aqrasfi-Jewelry-(1)-page-0014.jpg')"></div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+    <h2>Our Collections</h2>
+    <div class="products-grid">
+
+        <div class="product-card">
+            <img src="https://i.postimg.cc/50mNB5pJ/Gemini-Generated-Image-tdd6pbtdd6pbtdd6.png">
+            <h3>Necklace combo set</h3>
+            <p>Elegant and timeless pieces</p>
+            <button class="btn-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://i.postimg.cc/g0SLhM0Q/Aqrasfi-Jewelry-(1)-page-0007.jpg">
+            <h3>Bracelet</h3>
+            <p>Luxury statement necklaces</p>
+            <button class="btn-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://i.postimg.cc/BQwDPFh0/Gemini-Generated-Image-srsxr3srsxr3srsx.png">
+            <h3>Butterfly necklace</h3>
+            <p>Modern and classic rings</p>
+            <button class="btn-cart">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+© 2025 AQRASFI Jewelry — Crafted with Elegance
+</footer>
+
+<script>
+const slider = document.querySelector(".book-slider");
+const slides = document.querySelectorAll(".book-slide");
+
+let index = 0;
+
+function autoSlide() {
+    index += 2;  // move by 2 slides to show next pair
+    if (index >= slides.length) {
+        index = 0;
+    }
+
+    slider.style.transform = `translateX(-${index * 50}%)`;
+}
+
+// Change slide every 3 seconds
+setInterval(autoSlide, 3000);
+</script>
+
+</body>
+</html>
