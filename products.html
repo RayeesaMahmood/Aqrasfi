@@ -3,111 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AQRASFI</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Muqodimah:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>AQRASFI | Premium Jewelry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 
-*{box-sizing:border-box;}
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-margin:0;
-font-family:"Muqodimah","Poppins",sans-serif;
-background:#fafafa;
+font-family:'Poppins',sans-serif;
+background:#fff;
+color:#111;
 overflow-x:hidden;
+}
+
+/* VARIABLES */
+
+:root{
+--gold:#D4AF37;
+--gold-hover:#b8962e;
 }
 
 /* NAVBAR */
 
 .navbar{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
-background:white;
-box-shadow:0 2px 15px rgba(0,0,0,0.08);
-position:sticky;
-top:0;
+padding:18px 5%;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-.nav-left,.nav-right{
-display:flex;
-gap:20px;
-align-items:center;
-}
-
 .nav-center{
-position:absolute;
-left:50%;
-transform:translateX(-50%);
-font-size:24px;
-font-weight:bold;
+font-family:'Playfair Display',serif;
+font-size:26px;
+letter-spacing:3px;
 }
 
-.nav-left a,.nav-right i{
-text-decoration:none;
-color:black;
+.nav-center i{
+color:var(--gold);
+}
+
+.nav-right i{
+margin-left:20px;
 cursor:pointer;
-transition:.3s;
+font-size:18px;
 }
 
-.nav-left a:hover,.nav-right i:hover{
-color:#c59d5f;
+.nav-right i:hover{
+color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1600") center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+}
+
+.hero-content{
+position:relative;
+color:white;
+text-align:center;
+}
+
+.hero-content h1{
+font-family:'Playfair Display',serif;
+font-size:70px;
+letter-spacing:6px;
+}
+
+.hero-content p{
+margin:15px 0;
+letter-spacing:2px;
+}
+
+.hero-content button{
+padding:14px 35px;
+border:none;
+background:var(--gold);
+color:white;
+cursor:pointer;
+letter-spacing:2px;
+}
+
+.hero-content button:hover{
+background:var(--gold-hover);
 }
 
 /* PRODUCTS */
 
 .products-container{
-padding:60px 40px;
+padding:80px 5%;
+max-width:1400px;
+margin:auto;
 }
 
 .section-title{
+font-family:'Playfair Display',serif;
+font-size:36px;
 text-align:center;
-font-size:28px;
-margin-bottom:30px;
+margin-bottom:40px;
 }
-
-/* SLIDER */
 
 .slider-wrapper{
 position:relative;
-display:flex;
-align-items:center;
-margin-bottom:60px;
-padding:0 50px;
+margin-bottom:80px;
 }
 
 .products-slider{
 display:flex;
-gap:20px;
+gap:25px;
 overflow-x:auto;
 scroll-behavior:smooth;
-scrollbar-width:none;
 }
 
-.products-slider::-webkit-scrollbar{display:none;}
-
-/* CARD */
+.products-slider::-webkit-scrollbar{
+display:none;
+}
 
 .product-card{
-flex:0 0 auto;
-width:250px;
+min-width:260px;
 background:white;
-border-radius:8px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:.3s;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
 .product-card:hover{
-transform:translateY(-5px);
-box-shadow:0 8px 24px rgba(0,0,0,0.15);
+transform:translateY(-10px);
 }
 
 .product-image{
-height:250px;
+height:260px;
+overflow:hidden;
 }
 
 .product-image img{
@@ -116,25 +171,32 @@ height:100%;
 object-fit:cover;
 }
 
+.product-info{
+padding:20px;
+}
+
 .product-name{
-padding:15px 15px 5px;
 font-weight:600;
+margin-bottom:8px;
 }
 
 .product-price{
-padding:0 15px 10px;
-color:#c59d5f;
+color:var(--gold);
 font-weight:bold;
+margin-bottom:15px;
 }
 
 .add-to-cart-btn{
-margin:0 15px 15px;
-width:calc(100% - 30px);
-padding:10px;
-background:#c59d5f;
+width:100%;
+padding:12px;
 border:none;
+background:#111;
 color:white;
 cursor:pointer;
+}
+
+.add-to-cart-btn:hover{
+background:var(--gold);
 }
 
 /* SLIDER BUTTON */
@@ -149,80 +211,142 @@ border-radius:50%;
 border:none;
 background:white;
 cursor:pointer;
-box-shadow:0 4px 15px rgba(0,0,0,0.15);
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
-.slider-btn-prev{left:0;}
-.slider-btn-next{right:0;}
+.slider-btn-prev{
+left:-15px;
+}
+
+.slider-btn-next{
+right:-15px;
+}
 
 /* CART */
 
-#cartModal{
-position:fixed;
-top:0;
-right:-400px;
-width:350px;
-height:100%;
-background:white;
-box-shadow:-5px 0 20px rgba(0,0,0,0.2);
-transition:.4s;
-z-index:9999;
-padding:20px;
-overflow:auto;
-}
-
 #cartOverlay{
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.5);
 display:none;
-z-index:9998;
+z-index:999;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.product-card{width:180px;}
-.product-image{height:180px;}
-.slider-btn{display:none;}
-#cartModal{width:100%;}
-
+#cartModal{
+position:fixed;
+right:-400px;
+top:0;
+width:350px;
+height:100%;
+background:white;
+padding:20px;
+transition:0.3s;
+z-index:1000;
+overflow:auto;
 }
 
+.cart-item{
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+.remove-btn{
+border:none;
+background:red;
+color:white;
+padding:5px;
+cursor:pointer;
+margin-top:5px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#111;
+color:white;
+text-align:center;
+padding:50px 20px;
+}
+
+.footer h2{
+font-family:'Playfair Display',serif;
+letter-spacing:3px;
+}
+
+.footer i{
+margin:10px;
+color:var(--gold);
+font-size:22px;
+}
+
+/* TOAST */
+
+#toast{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:var(--gold);
+color:white;
+padding:10px 25px;
+display:none;
+}
+.products-slider{
+display:flex;
+gap:20px;
+overflow-x:auto;
+scroll-behavior:smooth;
+scrollbar-width:none;
+cursor:grab;
+}
+
+.products-slider:active{
+cursor:grabbing;
+}
+
+.products-slider::-webkit-scrollbar{
+display:none;
+}
 </style>
 </head>
-
 <body>
 
 <!-- NAVBAR -->
 
-<nav class="navbar">
-
-<div class="nav-left">
-<a href="index.html">Home</a>
-<a href="products.html">Products</a>
-<a href="products.html">Discover</a>
-<a href="products.html">Shop Now</a>
-</div>
+<div class="navbar">
 
 <div class="nav-center">
-<i class="fa-regular fa-gem"></i> AQRASFI
+<i class="fa fa-gem"></i> AQRASFI
 </div>
 
 <div class="nav-right">
-<i class="fa fa-search"></i>
-<i class="fa fa-shopping-cart"></i>
-<a href="https://www.instagram.com/aqrasfi" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
+<i class="fa fa-shopping-cart" id="cartIcon"></i>
 </div>
-</nav>
-<main class="products-container">
-<main class="products-container">
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>AQRASFI</h1>
+
+<p>Luxury Jewelry Collection</p>
+
+<button onclick="document.querySelector('.products-container').scrollIntoView({behavior:'smooth'})">
+SHOP NOW
+</button>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+]
     <!-- Earrings Section -->
     <section class="product-section">
         <h2 class="section-title">Earrings</h2>
@@ -451,9 +575,11 @@ z-index:9998;
                 <i class="fa fa-chevron-right"></i>
             </button>
         </div>
-    </section>
-</main>
+</div>
+</div>
+</div>
 
+</main>
 
 <!-- CART -->
 
@@ -465,153 +591,120 @@ z-index:9998;
 
 <div id="cartItems"></div>
 
-<h3 id="cartTotal">Total: 0 INR</h3>
-
-<button id="confirmOrder"
-style="width:100%;padding:10px;background:#c59d5f;border:none;color:white;font-weight:bold;">
-Confirm Order
-</button>
+<h3 id="cartTotal">Total: 0</h3>
 
 </div>
 
-
 <!-- FOOTER -->
 
-<footer style="background:#333;color:white;padding:40px;text-align:center;">
+<footer class="footer">
 
-<h3>AQRASFI</h3>
-<p>Premium Jewelry Collection</p>
+<h2>AQRASFI</h2>
 
-<a href="https://www.instagram.com/aqrasfi" target="_blank">
-<i class="fab fa-instagram" style="font-size:28px;color:#c59d5f;"></i>
-</a>
+<p>Premium Jewelry Brand</p>
 
-<p style="margin-top:20px;color:#aaa;font-size:12px;">
-© 2024 AQRASFI. All rights reserved.
-</p>
+<i class="fab fa-instagram"></i>
 
 </footer>
 
+<!-- TOAST -->
 
-<!-- CLEAN SCRIPT -->
+<div id="toast">Added to cart</div>
 
 <script>
 
-document.addEventListener("DOMContentLoaded",()=>{
-
 /* SLIDER */
 
-document.querySelectorAll('.slider-wrapper').forEach(wrapper=>{
+document.querySelector('.slider-btn-next').onclick=()=>{
+document.querySelector('.products-slider').scrollBy({left:300,behavior:'smooth'});
+};
 
-const slider=wrapper.querySelector('.products-slider');
-
-wrapper.querySelector('.slider-btn-prev').onclick=()=>
-slider.scrollBy({left:-270,behavior:'smooth'});
-
-wrapper.querySelector('.slider-btn-next').onclick=()=>
-slider.scrollBy({left:270,behavior:'smooth'});
-
-});
-
+document.querySelector('.slider-btn-prev').onclick=()=>{
+document.querySelector('.products-slider').scrollBy({left:-300,behavior:'smooth'});
+};
 
 /* CART */
 
-const cart=[];
-const cartIcon=document.querySelector('.fa-shopping-cart');
-const cartModal=document.getElementById('cartModal');
-const cartOverlay=document.getElementById('cartOverlay');
-const cartItems=document.getElementById('cartItems');
-const cartTotal=document.getElementById('cartTotal');
-const confirmBtn=document.getElementById('confirmOrder');
+let cart=[];
+const cartIcon=document.getElementById("cartIcon");
+const cartModal=document.getElementById("cartModal");
+const overlay=document.getElementById("cartOverlay");
 
+cartIcon.onclick=()=>{
+cartModal.style.right="0";
+overlay.style.display="block";
+};
 
-document.querySelectorAll('.add-to-cart-btn').forEach(btn=>{
+overlay.onclick=()=>{
+cartModal.style.right="-400px";
+overlay.style.display="none";
+};
 
-btn.onclick=function(){
+document.querySelectorAll(".add-to-cart-btn").forEach(btn=>{
 
-const card=this.closest('.product-card');
-const name=card.querySelector('.product-name').innerText;
-const price=parseInt(
-(card.querySelector('.product-price')?.innerText||"0")
-.replace(/\D/g,''));
+btn.onclick=()=>{
+
+const card=btn.closest(".product-card");
+
+const name=card.querySelector(".product-name").innerText;
+
+const price=parseInt(card.querySelector(".product-price").innerText);
 
 cart.push({name,price});
+
 updateCart();
-openCart();
+
+showToast();
 
 };
 
 });
-
 
 function updateCart(){
 
-cartItems.innerHTML="";
+const items=document.getElementById("cartItems");
+
+items.innerHTML="";
+
 let total=0;
 
-cart.forEach((item,i)=>{
+cart.forEach((item,index)=>{
 
 total+=item.price;
 
-cartItems.innerHTML+=`
-<div>
+items.innerHTML+=`
+<div class="cart-item">
 ${item.name}<br>
 ${item.price} INR<br>
-<button onclick="removeItem(${i})">Remove</button>
-</div><br>`;
+<button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+</div>
+`;
 
 });
 
-cartTotal.innerText="Total: "+total+" INR";
+document.getElementById("cartTotal").innerText="Total: "+total+" INR";
 
 }
 
-
-window.removeItem=function(i){
+function removeItem(i){
 
 cart.splice(i,1);
+
 updateCart();
 
-};
-
-
-function openCart(){
-
-cartModal.style.right="0";
-cartOverlay.style.display="block";
-
 }
 
+function showToast(){
 
-function closeCart(){
+const toast=document.getElementById("toast");
 
-cartModal.style.right="-400px";
-cartOverlay.style.display="none";
+toast.style.display="block";
+
+setTimeout(()=>toast.style.display="none",2000);
 
 }
-
-
-cartIcon.onclick=openCart;
-cartOverlay.onclick=closeCart;
-
-
-/* INSTAGRAM REDIRECT */
-
-confirmBtn.onclick=function(){
-
-if(cart.length===0){
-alert("Your cart is empty!");
-return;
-}
-
-window.open("https://www.instagram.com/aqrasfi","_blank");
-
-};
-
-});
 
 </script>
 
 </body>
 </html>
-
