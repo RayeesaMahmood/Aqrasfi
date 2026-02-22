@@ -16,7 +16,48 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <style>
+  /* FINAL RESPONSIVE FIX */
 
+html,body{
+overflow-x:hidden;
+width:100%;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+.navbar{
+padding:18px 5vw;
+}
+
+.products-section{
+padding:60px 5vw;
+}
+
+.book-slide{
+min-width:100%;
+}
+
+@media(min-width:769px){
+.book-slide{
+min-width:50%;
+}
+}
+  
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+html,body{
+overflow-x:hidden;
+width:100%;
+}
+  
 body{
 margin:0;
 font-family:"Poppins",sans-serif;
@@ -25,15 +66,15 @@ overflow-x:hidden;
 }
 
 /* NAVBAR */
-
 .navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 60px;
+padding:18px 5vw;
 background:white;
 box-shadow:0 2px 20px rgba(0,0,0,0.05);
 }
+
 
 .nav-left,.nav-right{
 display:flex;
@@ -131,13 +172,15 @@ transition:transform 1s ease-in-out;
 }
 
 .book-slide{
-min-width:50%;
-height:320px;
-background-size:contain;
-background-repeat:no-repeat;
-background-position:center;
+min-width:100%;
 }
 
+@media(min-width:769px){
+.book-slide{
+min-width:50%;
+}
+
+  
 /* VIEW PRODUCTS BUTTON */
 
 .view-products-container{
@@ -169,7 +212,7 @@ box-shadow:0 15px 35px rgba(0,0,0,0.25);
 /* PRODUCTS */
 
 .products-section{
-padding:60px 60px;
+padding:60px 5vw;
 text-align:center;
 }
 
@@ -486,3 +529,4 @@ setInterval(autoSlide,3000);
 
 </body>
 </html>
+
