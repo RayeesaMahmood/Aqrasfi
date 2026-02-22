@@ -414,20 +414,16 @@ display:none;
 }
 @media(max-width:1024px){
 
+@media(max-width:768px){
 .navbar{
-padding:15px 30px;
+padding:10px 15px;
+}
 }
 
 .product-card{
 min-width:220px;
 }
 
-}
-
-@media(max-width:768px){
-
-.navbar{
-padding:12px 20px;
 }
 
 .nav-left{
@@ -438,6 +434,17 @@ display:none;
 font-size:20px;
 }
 
+  .products-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.product-section {
+    overflow: hidden;
+}
+  
 .products-container{
 padding:40px 15px;
 }
@@ -497,9 +504,6 @@ font-size:24px;
 
             <button class="slider-btn prev">&#10094;
                 </button>
-
-            <div class="products-slider"> </div>
-
                 <!-- Product -->
                 <div class="product-card">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSov5VJ_3L08kOiHw-AnyFBBcNEm9t5v938ipYne2rxSA&s">
@@ -995,6 +999,7 @@ document.querySelectorAll(".prev").forEach((btn, index) => {
 </script>
 </body>
 </html>
+
 
 
 
