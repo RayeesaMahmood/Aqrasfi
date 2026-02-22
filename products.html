@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+
 <title>AQRASFI | Premium Jewelry</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,6 +11,110 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+}
+
+.products-container {
+    padding: 40px;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.products-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.products-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card {
+    min-width: 220px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-weight: bold;
+    color: #444;
+}
+
+.product-card button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.product-card button:hover {
+    background: #333;
+}
+
+.slider-btn {
+    background: black;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.slider-btn:hover {
+    background: #333;
+}
+
+/* Mobile */
+@media(max-width:768px) {
+
+.products-container {
+    padding: 20px;
+}
+
+.product-card {
+    min-width: 160px;
+}
+
+}
 
 /* RESET */
 
@@ -35,46 +138,13 @@ overflow-x:hidden;
 --gold-hover:#b8962e;
 }
 
-/* NAVBAR */
 
-.navbar{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 5%;
-background:rgba(255,255,255,0.95);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.nav-center{
-font-family:'Playfair Display',serif;
-font-size:26px;
-letter-spacing:3px;
-}
-
-.nav-center i{
-color:var(--gold);
-}
-
-.nav-right i{
-margin-left:20px;
-cursor:pointer;
-font-size:18px;
-}
-
-.nav-right i:hover{
-color:var(--gold);
-}
 
 /* HERO */
 
 .hero{
 height:100vh;
-background:url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1600") center/cover no-repeat;
+background:url("") center/cover no-repeat;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -310,16 +380,56 @@ cursor:grabbing;
 .products-slider::-webkit-scrollbar{
 display:none;
 }
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-center {
+    font-family: "Playfair Display", serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.nav-left a, .nav-right i {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-left a:hover,
+.nav-right i:hover {
+    color: #c59d5f;
+}
+
 </style>
 </head>
 <body>
+
 
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-left">
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
-        <a href="index.html">Discover</a>
+        <a href="products.html">Discover</a>
     </div>
 
     <div class="nav-center">AQRASFI</div>
@@ -331,258 +441,381 @@ display:none;
     </div>
 </nav>
 
-<!-- HERO -->
 
-<section class="hero">
+<!-- PRODUCTS-->
+ <main class="products-container">
 
-<div class="hero-content">
-
-<h1>AQRASFI</h1>
-
-<p>Luxury Jewelry Collection</p>
-
-<button onclick="document.querySelector('.products-container').scrollIntoView({behavior:'smooth'})">
-SHOP NOW
-</button>
-
-</div>
-
-</section>
-
-<!-- PRODUCTS -->
-]
     <!-- Earrings Section -->
     <section class="product-section">
         <h2 class="section-title">Earrings</h2>
+
         <div class="slider-wrapper">
-            <button class="slider-btn slider-btn-prev" aria-label="Previous">
-                <i class="fa fa-chevron-left"></i>
-            </button>
-            <div class="products-slider">
+
+            <button class="slider-btn prev">&#10094;
+                </button>
+
+            <div class="products-slider"> </div>
+
+                <!-- Product -->
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSov5VJ_3L08kOiHw-AnyFBBcNEm9t5v938ipYne2rxSA&s" alt="Black star leaf Earrings">
-                    </div>
-                    <h3 class="product-name">Diamond Studs</h3>
-                    <p class="product-price">150INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSov5VJ_3L08kOiHw-AnyFBBcNEm9t5v938ipYne2rxSA&s">
+                    <h3>Diamond Studs</h3>
+                    <p>150 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://www.viariaccessories.com/cdn/shop/files/EARAUG14-2.webp?v=1734703473">
+                    <h3>Pearl Drops</h3>
+                    <p>150 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSov5VJ_3L08kOiHw-AnyFBBcNEm9t5v938ipYne2rxSA&s">
+                    <h3>Gold Hoops</h3>
+                    <p>150 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/x1L0NmMW/4.png">
+                    <h3>12pc Earring</h3>
+                    <p>449 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/xqrw9sxT/5.png">
+                    <h3>Earrings Combo Set</h3>
+                    <p>499 INR</p>
+                    <button>Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://www.viariaccessories.com/cdn/shop/files/EARAUG14-2.webp?v=1734703473" alt="White star Earrings">
-                    </div>
-                    <h3 class="product-name">Pearl Drops</h3>
-                    <p class="product-price">150INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSov5VJ_3L08kOiHw-AnyFBBcNEm9t5v938ipYne2rxSA&s" alt="black Earrings">
-                    </div>
-                    <h3 class="product-name">Gold Hoops</h3>
-                    <p class="product-price">150 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/x1L0NmMW/4.png" alt="Jade Earrings">
-                    </div>
-                    <h3 class="product-name">12pc Earring</h3>
-                    <p class="product-price">449 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/xqrw9sxT/5.png" alt="Rose Gold Earrings">
-                    </div>
-                    <h3 class="product-name">Earrings Combo Set</h3>
-                    <p class="product-price">499 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
+                    <img src="https://i.postimg.cc/Gt6h1bqj/Whats-App-Image-2026-02-21-at-3-27-26-PM.jpg">
+                    <h3>Eid Hampers</h3>
+                    <p> INR</p>
+                    <button>Add to Cart</button>
+
+
             </div>
-            <button class="slider-btn slider-btn-next" aria-label="Next">
-                <i class="fa fa-chevron-right"></i>
-            </button>
+
+
+            <button class="slider-btn next">&#10095;</button>
+
         </div>
     </section>
+ <section class="product-section">
+        <h2 class="section-title">Necklace</h2>
 
-    <!-- Necklaces Section -->
-    <section class="product-section">
-        <h2 class="section-title">Necklaces</h2>
         <div class="slider-wrapper">
-            <button class="slider-btn slider-btn-prev" aria-label="Previous">
-                <i class="fa fa-chevron-left"></i>
-            </button>
-            <div class="products-slider">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/RhTYzMHb/1.png" alt="Gold Necklace">
-                    </div>
-                    <h3 class="product-name">Golden Chain</h3>
-                    <p class="product-price">399 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/J73vXQ2Q/2.png" alt="Pendant Necklace">
-                    </div>
-                    <h3 class="product-name">Diamond Pendant</h3>
-                    <p class="product-price">399 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/ZYP2NLM8/3.png" alt="Silver Necklace">
-                    </div>
-                    <h3 class="product-name">Silver Elegance</h3>
-                    <p class="product-price">399 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/3rLjz4yZ/Gemini-Generated-Image-6tr23w6tr23w6tr2.png" alt="Pearl Necklace">
-                    </div>
-                    <h3 class="product-name">Pearl Perfection</h3>
-                    <p class="product-price">459 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/RFgfry0p/Gemini-Generated-Image-7gy3zx7gy3zx7gy3.png" alt="Gemstone Necklace">
-                    </div>
-                    <h3 class="product-name">Gemstone Radiance</h3>
-                    <p class="product-price">459 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/hj2xF6G0/Gemini-Generated-Image-7tvz1b7tvz1b7tvz.png" alt="Crystal Necklace">
-                    </div>
-                    <h3 class="product-name">Crystal Charm</h3>
-                    <p class="product-price">459 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/tTBP0wgS/Gemini-Generated-Image-9ibwwl9ibwwl9ibw.png" alt="Luxury Necklace">
-                    </div>
-                    <h3 class="product-name">Luxury Divine</h3>
-                    <p class="product-price">459 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="https://i.postimg.cc/XY6rP4gL/Gemini-Generated-Image-g9dcvpg9dcvpg9dc.png" alt="Elegant Necklace">
-                                    </div>
-                                    <h3 class="product-name">Elegant Charm</h3>
-                                    <p class="product-price">449 INR</p>
-                                    <button class="add-to-cart-btn">Add to Cart</button>
-                                </div>
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="https://i.postimg.cc/ht8XW6yh/Gemini-Generated-Image-v8cdanv8cdanv8cd.png" alt="Serene Necklace">
-                                    </div>
-                                    <h3 class="product-name">Serene Beauty</h3>
-                                    <p class="product-price">449 INR</p>
-                                    <button class="add-to-cart-btn">Add to Cart</button>
-                                </div>
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="https://i.postimg.cc/zGwyZ6tb/Gemini-Generated-Image-wxvjf5wxvjf5wxvj.png" alt="Mystique Necklace">
-                                    </div>
-                                    <h3 class="product-name">Mystique Grace</h3>
-                                    <p class="product-price">449 INR </p>
-                                    <button class="add-to-cart-btn">Add to Cart</button>
-                                </div>
 
+            <button class="slider-btn prev">&#10094;</button>
+
+            <div class="products-slider">
+
+                <!-- Product -->
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/RhTYzMHb/1.png">
+                    <h3>Butterfly Necklace</h3>
+                    <p>399 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/J73vXQ2Q/2.png">
+                    <h3> Ring Necklace</h3>
+                    <p>399 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/ZYP2NLM8/3.png">
+                    <h3>Gold Necklace</h3>
+                    <p>299 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/3rLjz4yZ/Gemini-Generated-Image-6tr23w6tr23w6tr2.png">
+                    <h3>Necklace</h3>
+                    <p>549 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/RFgfry0p/Gemini-Generated-Image-7gy3zx7gy3zx7gy3.png">
+                    <h3>Necklace</h3>
+                    <p>549 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/hj2xF6G0/Gemini-Generated-Image-7tvz1b7tvz1b7tvz.png">
+                    <h3>Necklace</h3>
+                    <p>549 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/tTBP0wgS/Gemini-Generated-Image-9ibwwl9ibwwl9ibw.png">
+                    <h3>Necklace</h3>
+                    <p>549 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/ht8XW6yh/Gemini-Generated-Image-v8cdanv8cdanv8cd.png">
+                    <h3>Necklace</h3>
+                    <p>549 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/zGwyZ6tb/Gemini-Generated-Image-wxvjf5wxvjf5wxvj.png">
+                    <h3>Necklace</h3>
+                    <p>549 INR</p>
+                    <button>Add to Cart</button>
             </div>
-            <button class="slider-btn slider-btn-next" aria-label="Next">
-                <i class="fa fa-chevron-right"></i>
-            </button>
+    </div>
+ </div>
+</section>
+<section class="product-section">
+        <h2 class="section-title">Rings & Others</h2>
+
+        <div class="slider-wrapper">
+
+            <button class="slider-btn prev">&#10094;</button>
+
+            <div class="products-slider">
+
+                <!-- Product -->
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/RVyh2fc1/Whats-App-Image-2026-02-15-at-7-47-50-PM.jpg">
+                    <h3>Black Commbo Set</h3>
+                    <p>839 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/65gqFRdY/Whats-App-Image-2026-02-15-at-7-47-51-PM.jpg">
+                    <h3>White Combo Set-</h3>
+                    <p>839 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/m2JkKMQV/Whats-App-Image-2026-02-15-at-7-47-51-PM-(1).jpg">
+                    <h3>Golden Combo Set</h3>
+                    <p>839 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/QNSWYHYr/Whats-App-Image-2026-02-15-at-7-45-46-PM.jpg">
+                    <h3>Cartier-Double Combo</h3>
+                    <p>1299 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/Y28mDhDK/Whats-App-Image-2026-02-15-at-7-45-59-PM.jpg">
+                    <h3>Cartier Single</h3>
+                    <p>499 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/wxFs474H/Whats-App-Image-2026-02-15-at-7-46-07-PM.jpg">
+                    <h3>Necklace</h3>
+                    <p>549 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/3r9DfdfK/Whats-App-Image-2026-02-15-at-7-46-08-PM.jpg">
+                    <h3>Combo</h3>
+                    <p>839 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+    </div>
+
+            <button class="slider-btn next">&#10095;</button>
+
+    </div>
+        </section>
+<section class="product-section">
+        <h2 class="section-title">Hampers and Watche</h2>
+        <div class="slider-wrapper">
+            <button class="slider-btn prev">&#10094;</button>
+            <div class="products-slider">
+                <!-- Product -->
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/Gt6h1bqj/Whats-App-Image-2026-02-21-at-3-27-26-PM.jpg">
+                    <h3>Hampers</h3>
+                    <p>INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/T2QWNp7B/Whats-App-Image-2026-02-15-at-7-45-44-PM.jpg">
+                    <h3>White Combo Set-</h3>
+                    <p>839 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/x8DqLm4P/Whats-App-Image-2026-02-21-at-4-05-09-PM.jpg">
+                    <h3>Golden Ring Combo</h3>
+                    <p>339 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.postimg.cc/5tyHJbzk/Whats-App-Image-2026-01-30-at-10-55-48-PM.jpg">
+                    <h3>Phone Charms</h3>
+                    <p>150 INR</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
+<!-- meraj anty products  -->
+  <section class="product-section">
+    <h2 class="section-title">JEWELERY KUNDAN</h2>
+    <div class="slider-wrapper">
 
-    <!-- Rings & Bracelets Section -->
-    <section class="product-section">
-        <h2 class="section-title">Rings & Bracelets</h2>
-        <div class="slider-wrapper">
-            <button class="slider-btn slider-btn-prev" aria-label="Previous">
-                <i class="fa fa-chevron-left"></i>
-            </button>
-            <div class="products-slider">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/RVyh2fc1/Whats-App-Image-2026-02-15-at-7-47-50-PM.jpg" alt="Ring 1">
-                    </div>
-                    <h3 class="product-name">Black solatire set combo</h3>
-                    <p class="product-price">599 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/65gqFRdY/Whats-App-Image-2026-02-15-at-7-47-51-PM.jpg" alt="Ring 2">
-                    </div>
-                    <h3 class="product-name">White Solatire set combo</h3>
-                    <p class="product-price">599 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/m2JkKMQV/Whats-App-Image-2026-02-15-at-7-47-51-PM-(1).jpg" alt="Ring 3">
-                    </div>
-                    <h3 class="product-name">golden combo</h3>
-                    <p class="product-price">599 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/T2QWNp7B/Whats-App-Image-2026-02-15-at-7-45-44-PM.jpg" alt="Bracelet 1">
-                    </div>
-                    <h3 class="product-name">Gold Watch Quatrz</h3>
-                    <p class="product-price">1499 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/QNSWYHYr/Whats-App-Image-2026-02-15-at-7-45-46-PM.jpg" alt="Bracelet 2">
-                    </div>
-                    <h3 class="product-name">Cartier Double Bracelet</h3>
-                    <p class="product-price">1200 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/Y28mDhDK/Whats-App-Image-2026-02-15-at-7-45-59-PM.jpg" alt="Bracelet 3">
-                    </div>
-                    <h3 class="product-name">single Cartier Bracelet</h3>
-                    <p class="product-price">549 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/wxFs474H/Whats-App-Image-2026-02-15-at-7-46-07-PM.jpg" alt="Bracelet 4">
-                    </div>
-                    <h3 class="product-name">Pearl Luxury</h3>
-                    <p class="product-price"> 1200 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/3r9DfdfK/Whats-App-Image-2026-02-15-at-7-46-08-PM.jpg" alt="Bracelet 5">
-                    </div>
-                    <h3 class="product-name">Jade Harmony</h3>
-                    <p class="product-price">599 INR</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
+        <button class="slider-btn prev">&#10094;</button>
+
+        <div class="products-slider">
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/cJ76VXC9/Whats-App-Image-2026-02-23-at-2-48-18-AM.jpg">
+                <h3> Set 1</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
             </div>
-            <button class="slider-btn slider-btn-next" aria-label="Next">
-                <i class="fa fa-chevron-right"></i>
-            </button>
-        </div>
-</div>
-</div>
-</div>
 
+            <div class="product-card">
+                <img src="https://i.postimg.cc/TPvp7Zd7/Whats-App-Image-2026-02-23-at-2-48-18-AM-(1).jpg">
+                <h3> Set 2</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/yNhWwvWq/Whats-App-Image-2026-02-23-at-2-48-19-AM.jpg">
+                <h3> Set 3</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/9fPzvJ0k/Whats-App-Image-2026-02-23-at-2-48-19-AM-(1).jpg">
+                <h3> Set 4</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/6QVTDYq1/Whats-App-Image-2026-02-23-at-2-48-19-AM-(2).jpg">
+                <h3> Set 5</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/Bv5tdMbV/Whats-App-Image-2026-02-23-at-2-48-19-AM-(3).jpg">
+                <h3> Set 6</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/8CdsqtsG/Whats-App-Image-2026-02-23-at-2-48-20-AM.jpg">
+                <h3> Set 7</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/5t5jZnjb/Whats-App-Image-2026-02-23-at-2-48-20-AM-(1).jpg">
+                <h3> Set 8</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/7L1bpmbk/Whats-App-Image-2026-02-23-at-2-48-20-AM-(2).jpg">
+                <h3> Set 9</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+        </div>
+
+        <button class="slider-btn next">&#10095;</button>
+
+    </div>
+</section>
+<!-- meraj anty products rack2  -->
+<section class="product-section">
+    <h2 class="section-title">JEWELERY KUNDAN</h2>
+    <div class="slider-wrapper">
+
+        <button class="slider-btn prev">&#10094;</button>
+
+        <div class="products-slider">
+<div class="product-card">
+                <img src="https://i.postimg.cc/ydVWBcSK/Whats-App-Image-2026-02-23-at-2-48-21-AM.jpg">
+                <h3> Set 10</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/25d3P238/Whats-App-Image-2026-02-23-at-2-48-21-AM-(1).jpg">
+                <h3> Set 11</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/KY74dJ4j/Whats-App-Image-2026-02-23-at-2-48-21-AM-(2).jpg">
+                <h3> Set 12</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/bJzd8k2n/Whats-App-Image-2026-02-23-at-2-48-22-AM.jpg">
+                <h3> Set 13</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/LXHhRLZ2/Whats-App-Image-2026-02-23-at-2-48-22-AM-(1).jpg">
+                <h3> Set 14</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/RFMq9Knq/Whats-App-Image-2026-02-23-at-2-48-22-AM-(2).jpg">
+                <h3>Hamper Set 15</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/QtXVs1Wc/Whats-App-Image-2026-02-23-at-2-48-23-AM.jpg">
+                <h3> Set 16</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/ydVWBcSc/Whats-App-Image-2026-02-23-at-2-48-23-AM-(1).jpg">
+                <h3> Set 17</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.postimg.cc/639TwnGL/Whats-App-Image-2026-02-23-at-2-48-24-AM.jpg">
+                <h3> Set 18</h3>
+                <p>INR</p>
+                <button>Add to Cart</button>
+            </div>
+
+        </div>
+        </div>  
+ </section>
 </main>
 
 <!-- CART -->
@@ -708,8 +941,29 @@ setTimeout(()=>toast.style.display="none",2000);
 
 }
 
-</script>
 
+const sliders = document.querySelectorAll(".products-slider");
+
+document.querySelectorAll(".next").forEach((btn, index) => {
+
+    btn.onclick = () => {
+
+        sliders[index].scrollLeft += 300;
+
+    };
+
+});
+
+document.querySelectorAll(".prev").forEach((btn, index) => {
+
+    btn.onclick = () => {
+
+        sliders[index].scrollLeft -= 300;
+
+    };
+
+});
+
+</script>
 </body>
 </html>
-
