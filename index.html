@@ -62,60 +62,60 @@ body {
 }
 
 /* ================= HERO ================= */
-
-.hero {
-    height: 90vh;
-    background: url(" https://images.unsplash.com/photo-1601821765780-754fa98637c1 ") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.hero{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    position:relative;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
+.hero-slider{
+    width:100%;
+    height:100%;
 }
 
-.hero-content {
-    position: relative;
-    color: white;
-    text-align: center;
+.hero-track{
+    display:flex;
+    height:100%;
+    transition:transform 0.5s ease;
 }
 
-.hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: 60px;
-    margin: 0;
+.hero-slide{
+    min-width:100%;
 }
 
-.hero p {
-    margin: 20px 0;
-    font-size: 18px;
-    letter-spacing: 1px;
+.hero-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.hero button {
-    padding: 12px 30px;
-    border: none;
-    background: #c59d5f;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 30px;
-    transition: 0.3s;
+.hero-prev,
+.hero-next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.5);
+    color:white;
+    border:none;
+    font-size:30px;
+    padding:10px 18px;
+    cursor:pointer;
 }
 
-.hero button:hover {
-    background: #b8885a;
+.hero-prev{ left:20px; }
+.hero-next{ right:20px; }
+
+@media(max-width:768px){
+.hero{
+    height:60vh;
+}
 }
 
 /* ================= SLIDER ================= */
 
 .book-section {
-    padding: 60px 0;
+    padding: 40px 20px;
     background: #fafafa;
     display: flex;
     justify-content: center;
@@ -142,23 +142,77 @@ body {
     background-position: center;
 }
 
+/* ================= VIEW PRODUCTS ================= */
+.view-products-container{
+    text-align:center;
+    margin:20px 0;
+}
+
+/* Button style */
+.view-products-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 38px;
+    font-size:18px;
+    font-family:'Playfair Display', serif;
+    letter-spacing:1px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(135deg, #D4AF37, #b8962e);
+    border-radius:40px;
+    transition:all 0.35s ease;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Arrow animation */
+.view-products-btn .arrow{
+    transition:transform 0.3s ease;
+}
+
+/* Hover effect */
+.view-products-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+    background:linear-gradient(135deg, #b8962e, #D4AF37);
+}
+
+.view-products-btn:hover .arrow{
+    transform:translateX(6px);
+}
+
+/* Click effect */
+.view-products-btn:active{
+    transform:scale(0.96);
+}
+
+/* Mobile responsive */
+@media(max-width:768px){
+
+.view-products-btn{
+    padding:14px 28px;
+    font-size:16px;
+}
+
+}
+
 /* ================= PRODUCTS ================= */
 
 .products-section {
-    padding: 80px 60px;
+    padding: 60px 60px;
     text-align: center;
 }
 
 .products-section h2 {
     font-family: "Playfair Display", serif;
     font-size: 36px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
 }
 
 .product-card {
@@ -337,9 +391,9 @@ img {
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-left">
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <a href="products.html">Products</a>
-        <a href="#">Discover</a>
+        <a href="products.html">Discover</a>
     </div>
 
     <div class="nav-center">AQRASFI</div>
@@ -350,19 +404,35 @@ img {
         <i class="fab fa-instagram"></i>
     </div>
 </nav>
-
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero">
-    <div class="hero-content">
-        <h1>Timeless Elegance</h1>
-        <p>Luxury Jewelry Crafted with Passion</p>
+    <div class="hero-slider">
+        <div class="hero-track">
+
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1601821765780-754fa98637c1 ">
+            </div>
+
+            <div class="hero-slide">
+                <img src="https://i.postimg.cc/GpjHQ5vr/1.png">
+            </div>
+
+            <div class="hero-slide">
+                <img src="https://i.postimg.cc/ZRK0Dxx1/2.png">
+            </div>
+  
+        </div>
+
     </div>
+
 </section>
-<!-- View Products Button -->
-<div style="text-align:center; margin-top: 50px;">
-    <button onclick="window.location.href='products.html'" 
-            style="padding:15px 30px; font-size:20px; cursor:pointer;">View Our Collections
-    </button>
+<!-- VIEW PRODUCTS -->
+
+<div class="view-products-container">
+    <a href="products.html" class="view-products-btn">
+        View Our Collections
+        <span class="arrow">→</span>
+    </a>
 </div>
 <!-- BOOK SLIDER -->
 <section class="book-section">
@@ -383,107 +453,59 @@ img {
 </section>
 
 <!-- PRODUCTS -->
-<!-- PRODUCTS -->
 <section class="products-section">
-    <h2>Our Collections</h2>
+    <h2>Our Featured Collections</h2>
+    <div class="products-container">
 
-    <div class="products-grid">
-
-        <!-- Product 1 -->
         <div class="product-card">
             <img src="https://i.postimg.cc/50mNB5pJ/Gemini-Generated-Image-tdd6pbtdd6pbtdd6.png">
             <h3>Necklace combo set</h3>
             <p>Elegant and timeless pieces</p>
-            <button class="btn-cart">Add to Cart</button>
         </div>
 
-        <!-- Product 2 -->
         <div class="product-card">
             <img src="https://i.postimg.cc/g0SLhM0Q/Aqrasfi-Jewelry-(1)-page-0007.jpg">
             <h3>Bracelet</h3>
-            <p>Luxury statement jewelry</p>
-            <button class="btn-cart">Add to Cart</button>
+            <p>Luxury statement necklaces</p>
         </div>
 
-        <!-- Product 3 -->
         <div class="product-card">
             <img src="https://i.postimg.cc/BQwDPFh0/Gemini-Generated-Image-srsxr3srsxr3srsx.png">
-            <h3>Butterfly Necklace</h3>
-            <p>Modern and classic design</p>
-            <button class="btn-cart">Add to Cart</button>
+            <h3>Butterfly necklace</h3>
+            <p>Modern and classic rings</p>
         </div>
 
-        <!-- Product 4 -->
-        <div class="product-card">
-            <img src="https://i.postimg.cc/wxFs474H/Whats-App-Image-2026-02-15-at-7-46-07-PM.jpg">
-            <h3>Pearl Luxury</h3>
-           
-            <button class="btn-cart">Add to Cart</button>
-        </div>
-
-        <!-- Product 5 -->
-        <div class="product-card">
-            <img src="https://i.postimg.cc/3r9DfdfK/Whats-App-Image-2026-02-15-at-7-46-08-PM.jpg">
-            <h3>Jade Harmony</h3>
-        
-            <button class="btn-cart">Add to Cart</button>
-        </div>
-
-        <!-- Product 6 -->
-        <div class="product-card">
-            <img src="https://i.postimg.cc/m2JkKMQV/Whats-App-Image-2026-02-15-at-7-47-51-PM-(1).jpg">
-            <h3>Golden Combo</h3>
-         
-            <button class="btn-cart">Add to Cart</button>
-        </div>
-
-        <!-- Product 7 -->
-        <div class="product-card">
-            <img src="https://i.postimg.cc/T2QWNp7B/Whats-App-Image-2026-02-15-at-7-45-44-PM.jpg">
-            <h3>Gold Watch Quartz</h3>
-        
-            <button class="btn-cart">Add to Cart</button>
-        </div>
-
-        <!-- Product 8 -->
-        <div class="product-card">
-            <img src="https://i.postimg.cc/ht8XW6yh/Gemini-Generated-Image-v8cdanv8cdanv8cd.png">
-            <h3>Serene Beauty</h3>
-           
-            <button class="btn-cart">Add to Cart</button>
-        </div>
-
-        <!-- Product 9 -->
-        <div class="product-card">
-            <img src="https://i.postimg.cc/zGwyZ6tb/Gemini-Generated-Image-wxvjf5wxvjf5wxvj.png">
-            <h3>Mystique Grace</h3>
-          
-            <button class="btn-cart">Add to Cart</button>
-        </div>
-
-        <!-- Product 10 -->
-        <div class="product-card">
-            <img src="https://i.postimg.cc/ZYP2NLM8/3.png">
-            <h3>Silver Elegance</h3>
-            
-            <button class="btn-cart">Add to Cart</button>
-        </div>
-
-        <!-- Product 11 -->
-        <div class="product-card">
-            <img src="https://i.postimg.cc/3rLjz4yZ/Gemini-Generated-Image-6tr23w6tr23w6tr2.png">
-            <h3>Pearl Perfection</h3>
-            <button class="btn-cart">Add to Cart</button>
-        </div>
-       <div class="product-image">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSov5VJ_3L08kOiHw-AnyFBBcNEm9t5v938ipYne2rxSA&s" alt="Black star leaf Earrings">
-      <h3>studs</h3>
-     <button class="btn-cart">Add to Cart</button>
-                    
-      </div>
-        
-
+    </div>
 </section>
+<!-- FOOTER view more roducts-->
+<!-- VIEW MORE BUTTON -->
+<div class="view-more-container">
+    <a href="products.html" class="view-more-btn">View More</a>
+</div>
+
+<style>
+.view-more-container{
+    text-align:center;
+    margin:40px 0 60px 0;
+}
+
+.view-more-btn{
+    display:inline-block;
+    padding:12px 28px;
+    font-size:16px;
+    font-family:'Poppins', sans-serif;
+    color:white;
+    background:#D4AF37;
+    text-decoration:none;
+    border-radius:25px;
+    transition:0.3s;
+}
+
+.view-more-btn:hover{
+    background:#b8962e;
+    transform:translateY(-2px);
+}
+</style>
 
 <footer>
 © 2025 AQRASFI Jewelry — Crafted with Elegance
@@ -506,9 +528,56 @@ function autoSlide() {
 setInterval(autoSlide, 3000);
 </script>
 
+<script>
+
+const heroTrack = document.querySelector(".hero-track");
+const heroSlides = document.querySelectorAll(".hero-slide");
+
+let heroIndex = 0;
+
+document.querySelector(".hero-next").onclick = () => {
+
+    heroIndex++;
+
+    if(heroIndex >= heroSlides.length)
+        heroIndex = 0;
+
+    updateHero();
+
+};
+
+document.querySelector(".hero-prev").onclick = () => {
+
+    heroIndex--;
+
+    if(heroIndex < 0)
+        heroIndex = heroSlides.length - 1;
+
+    updateHero();
+
+};
+
+function updateHero(){
+
+    heroTrack.style.transform =
+        "translateX(-" + heroIndex * 100 + "%)";
+
+}
+
+/* AUTO SLIDE */
+
+setInterval(() => {
+
+    heroIndex++;
+
+    if(heroIndex >= heroSlides.length)
+        heroIndex = 0;
+
+    updateHero();
+
+}, 4000);
+
+</script>
+
 </body>
 </html>
-
-
-
-
