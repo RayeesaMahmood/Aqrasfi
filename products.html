@@ -17,15 +17,7 @@ body {
     background: #f9f9f9;
 }
 
-.products-container {
-    padding: 40px;
-}
 
-.section-title {
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
 
 .slider-wrapper {
     position: relative;
@@ -33,12 +25,6 @@ body {
     align-items: center;
 }
 
-.products-slider {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-}
 
 .products-slider::-webkit-scrollbar {
     display: none;
@@ -209,12 +195,7 @@ position:relative;
 margin-bottom:80px;
 }
 
-.products-slider{
-display:flex;
-gap:25px;
-overflow-x:auto;
-scroll-behavior:smooth;
-}
+
 
 .products-slider::-webkit-scrollbar{
 display:none;
@@ -418,7 +399,57 @@ display:none;
 .nav-right i:hover {
     color: #c59d5f;
 }
+@media(max-width:1024px){
 
+.navbar{
+padding:15px 30px;
+}
+
+.product-card{
+min-width:220px;
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+padding:12px 20px;
+}
+
+.nav-left{
+display:none;
+}
+
+.nav-center{
+font-size:20px;
+}
+
+.products-container{
+padding:40px 15px;
+}
+
+.product-card{
+min-width:180px;
+}
+
+.slider-btn{
+display:none;
+}
+
+}
+
+@media(max-width:480px){
+
+.product-card{
+min-width:160px;
+}
+
+.section-title{
+font-size:24px;
+}
+
+}
 </style>
 </head>
 <body>
@@ -934,37 +965,22 @@ updateCart();
 function showToast(){
 
 const toast=document.getElementById("toast");
-
 toast.style.display="block";
-
 setTimeout(()=>toast.style.display="none",2000);
-
 }
-
-
 const sliders = document.querySelectorAll(".products-slider");
-
 document.querySelectorAll(".next").forEach((btn, index) => {
-
     btn.onclick = () => {
-
         sliders[index].scrollLeft += 300;
-
     };
-
 });
-
 document.querySelectorAll(".prev").forEach((btn, index) => {
-
     btn.onclick = () => {
-
         sliders[index].scrollLeft -= 300;
-
     };
-
 });
-
 </script>
 </body>
 </html>
+
 
